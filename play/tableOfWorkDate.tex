@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{tocloft}
+\usepackage{hyperref}
+
+\author{Minhaz}
+\title{Table of Workdate}
+\date{\today}
+
+\newcommand{\listworkdate}{Workdays}
+\newlistof{workdate}{wkdt}{\listworkdate}
+\newcommand{\workdate}[1]{%
+\refstepcounter{workdate}
+\par\noindent\textbf{DAY \theworkdate  : #1}
+\addcontentsline{wkdt}{workdate}{\protect\numberline{\theworkdate}#1}\par}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\listofworkdate
+\newpage
+
+\section{first section}
+\workdate{2024-11-05}
+game
+\workdate{medium}
+hello game
+\subsection{first subsection}
+
+\section{second section}
+\workdate{2024-11-06}
+this is sample
+
+\section{third secion}
+\end{document}
